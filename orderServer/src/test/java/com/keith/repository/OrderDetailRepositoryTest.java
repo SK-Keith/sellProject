@@ -9,10 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-/**
- * Created by 廖师兄
- * 2017-12-10 16:23
- */
 @Component
 public class OrderDetailRepositoryTest extends OrderApplicationTest {
 

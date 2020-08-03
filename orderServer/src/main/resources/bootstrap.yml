@@ -14,15 +14,9 @@ spring:
         myMessage:
           group: order
           content-type: application/json
-  redis:
-    host: 192.168.0.105
-    port: 6379
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8763/eureka/
   instance:
       prefer-ip-address: true # 调用服务时IP化，非域名
-logging:
-  level:
-    org.springframework.cloud.bus: debug
