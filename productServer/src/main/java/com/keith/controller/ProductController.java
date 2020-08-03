@@ -16,6 +16,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+*   @Description: 方法注释
+*
+*   @Author: SK-Keith
+*   @Date: 2020/8/2
+*/
 @RestController
 @RequestMapping("/product")
 public class ProductController {
@@ -31,6 +37,7 @@ public class ProductController {
      * 2. 获取类目type列表
      * 3. 查询类目
      * 4. 构造数据
+     * @return
      */
     @RequestMapping("/list")
     public ResultVO<List<ProductInfo>> list() {
@@ -61,11 +68,23 @@ public class ProductController {
         return resultVO;
     }
 
+    /**
+    *   @Description: 根据产品id获取产品列表
+    *   @Param: [productIdList] 产品id列表
+    *   @return: java.util.List<com.keith.common.model.ProductInfo>
+    *   @Date: 2020/8/2
+    */
     @PostMapping("/listForOrder")
     public List<ProductInfo> getForOrder(@RequestBody List<String> productIdList) {
         return productService.findList(productIdList);
     }
 
+    /**
+    *   @Description:  根据购物车列表减库存
+    *   @Param: [carDTOS]
+    *   @return: void
+    *   @Date: 2020/8/2
+    */
     @PostMapping("/decreaseStock")
     public void decreaseStock(@RequestBody List<CarDTO> carDTOS) {
             productService.decreaseStock(carDTOS);

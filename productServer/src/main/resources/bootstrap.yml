@@ -20,6 +20,3 @@ eureka:
       defaultZone: http://localhost:8763/eureka/
   instance:
       prefer-ip-address: true # 调用服务时IP化，非域名
-logging:
-  level:
-    org.springframework.cloud.bus: INFO
