@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG-SERVER
+      profile: dev
+    bus:
+      id: ${spring.application.name}:${spring.cloud.config.profile}:${random.value}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8763/eureka/
+  instance:
+      prefer-ip-address: true # 调用服务时IP化，非域名
